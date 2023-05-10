@@ -61,12 +61,27 @@
         <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.4r-r8GS6pz9IYTCdEVLAJAHaE7%26pid%3DApi&f=1&ipt=
         cb6ba93b0a5b1a1e631eaa0e323ee51c65be974c828e6e7ac6d59d0f3714f8e6&ipo=images" alt="close-up picture of a fly" width="350" usemap="#flymap">
         <map name="flymap">
-            <!-- Can also include href"" to direct user to another page when area is clicked -->
-            <area shape="poly" coords="175,170,340,37,100,17" alt="Fly Body" onclick="flyBody()">
+            <!-- Can also include href="" to direct user to another page when area is clicked -->
+            <area id="fly" shape="poly" coords="175,170,340,37,100,17" alt="Fly Body" onclick="flyBody()" style="cursor: pointer;">
         </map>
         <script>
+            let clicks = 0;
             function flyBody() {
-                alert("Please don't pet the fly.");
+                clicks++;
+                if (clicks === 2) {
+                    alert("Please stop. I'm warning you.");
+                }
+                else if (clicks === 3) {
+                    alert("This is your last chance.");
+                }
+                else if (clicks >= 4) {
+                    alert("Now you've done it.");
+                    document.getElementById("fly").href="jail.html";
+                    //window.open("jail.html");
+                }
+                else {
+                    alert("Please don't pet the fly.");
+                }
             }
         </script>
         </div>
@@ -80,7 +95,9 @@
                 wall in 3 seconds and reclusive, making it incredibly difficult to rest easy once they instantaneously disappear from sight and are
                 never seen again.
             </li>
-            <li><b>Cicadas:</b> the flying carcasses and ubiquitous buzzing in the summer really are what secured them a spot here.</li>
+            <li><b>Cicadas:</b> the flying carcasses and ubiquitous buzzing in the summer really are what secured them a spot here. Also, one time,
+                during the peak of cicada season, my friend and I went to use her trampoline and on landing the first jump, 100+ cicada shells
+                emerged from underneath the trampoline skirt, rolling down to our feet. But, that's a memory I'd rather keep supressed.</li>
             <li><b>Drain Flies:</b> these guys aren't too revolting, but I think it's their presence in bathrooms, the place you go to
                 get clean, that makes me so uncomfortable. Their resistance is also unappealing; I think my bathroom had them on 3
                 separate occacions within my last year of living at home.</li>
